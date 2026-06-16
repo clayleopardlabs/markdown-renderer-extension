@@ -1,0 +1,376 @@
+/* ─── Reset ──────────────────────────────────────────── */
+#md-renderer *,
+#md-renderer *::before,
+#md-renderer *::after {
+  box-sizing: border-box;
+}
+
+/* ─── Base Layout ────────────────────────────────────── */
+#md-renderer {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  word-wrap: break-word;
+  min-height: 100vh;
+}
+
+/* ─── Dark Theme (default) ───────────────────────────── */
+#md-renderer.theme-dark {
+  color: #e6edf3;
+  background: #0d1117;
+}
+
+#md-renderer.theme-dark ::selection {
+  background: #264f78;
+  color: #e6edf3;
+}
+
+#md-renderer.theme-dark a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+#md-renderer.theme-dark a:hover {
+  text-decoration: underline;
+}
+
+#md-renderer.theme-dark h1,
+#md-renderer.theme-dark h2,
+#md-renderer.theme-dark h3,
+#md-renderer.theme-dark h4,
+#md-renderer.theme-dark h5,
+#md-renderer.theme-dark h6 {
+  color: #f0f6fc;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+#md-renderer.theme-dark h1 { font-size: 2em; border-bottom: 1px solid #21262d; padding-bottom: 0.3em; }
+#md-renderer.theme-dark h2 { font-size: 1.5em; border-bottom: 1px solid #21262d; padding-bottom: 0.3em; }
+#md-renderer.theme-dark h3 { font-size: 1.25em; }
+#md-renderer.theme-dark h4 { font-size: 1em; }
+#md-renderer.theme-dark h5 { font-size: 0.875em; }
+#md-renderer.theme-dark h6 { font-size: 0.85em; color: #8b949e; }
+
+#md-renderer.theme-dark p,
+#md-renderer.theme-dark li,
+#md-renderer.theme-dark dl {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-dark code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  background: #161b22;
+  border-radius: 6px;
+  color: #f0f6fc;
+}
+
+#md-renderer.theme-dark pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.45;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-dark pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+#md-renderer.theme-dark blockquote {
+  padding: 0 1em;
+  color: #8b949e;
+  border-left: 0.25em solid #30363d;
+  margin: 0 0 16px 0;
+}
+
+#md-renderer.theme-dark table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-dark table th {
+  font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid #30363d;
+  background: #161b22;
+}
+
+#md-renderer.theme-dark table td {
+  padding: 6px 13px;
+  border: 1px solid #30363d;
+}
+
+#md-renderer.theme-dark table tr {
+  background: #0d1117;
+  border-top: 1px solid #21262d;
+}
+
+#md-renderer.theme-dark table tr:nth-child(2n) {
+  background: #161b22;
+}
+
+#md-renderer.theme-dark img {
+  max-width: 100%;
+  background: transparent;
+}
+
+#md-renderer.theme-dark hr {
+  height: 1px;
+  padding: 0;
+  margin: 24px 0;
+  background: #21262d;
+  border: 0;
+}
+
+#md-renderer.theme-dark ul,
+#md-renderer.theme-dark ol {
+  padding-left: 2em;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-dark li+li {
+  margin-top: 0.25em;
+}
+
+#md-renderer.theme-dark .mermaid-wrapper {
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  background: #1c2128;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+#md-renderer.theme-dark .mermaid-wrapper svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#md-renderer.theme-dark .mermaid-fallback {
+  background: #161b22;
+  border: 1px dashed #f85149;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  line-height: 1.45;
+  color: #f85149;
+  white-space: pre-wrap;
+  margin-bottom: 16px;
+}
+
+/* ─── Light Theme ────────────────────────────────────── */
+#md-renderer.theme-light {
+  color: #1f2328;
+  background: #ffffff;
+}
+
+#md-renderer.theme-light ::selection {
+  background: #accef7;
+}
+
+#md-renderer.theme-light a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+#md-renderer.theme-light a:hover {
+  text-decoration: underline;
+}
+
+#md-renderer.theme-light h1,
+#md-renderer.theme-light h2,
+#md-renderer.theme-light h3,
+#md-renderer.theme-light h4,
+#md-renderer.theme-light h5,
+#md-renderer.theme-light h6 {
+  color: #1f2328;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+#md-renderer.theme-light h1 { font-size: 2em; border-bottom: 1px solid #d0d7de; padding-bottom: 0.3em; }
+#md-renderer.theme-light h2 { font-size: 1.5em; border-bottom: 1px solid #d0d7de; padding-bottom: 0.3em; }
+
+#md-renderer.theme-light code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  background: #f3f4f6;
+  border-radius: 6px;
+  color: #1f2328;
+}
+
+#md-renderer.theme-light pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.45;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-light pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+#md-renderer.theme-light blockquote {
+  padding: 0 1em;
+  color: #656d76;
+  border-left: 0.25em solid #d0d7de;
+  margin: 0 0 16px 0;
+}
+
+#md-renderer.theme-light table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-light table th {
+  font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid #d0d7de;
+  background: #f6f8fa;
+}
+
+#md-renderer.theme-light table td {
+  padding: 6px 13px;
+  border: 1px solid #d0d7de;
+}
+
+#md-renderer.theme-light table tr {
+  background: #ffffff;
+  border-top: 1px solid #d0d7de;
+}
+
+#md-renderer.theme-light table tr:nth-child(2n) {
+  background: #f6f8fa;
+}
+
+#md-renderer.theme-light img {
+  max-width: 100%;
+}
+
+#md-renderer.theme-light hr {
+  height: 1px;
+  padding: 0;
+  margin: 24px 0;
+  background: #d0d7de;
+  border: 0;
+}
+
+#md-renderer.theme-light ul,
+#md-renderer.theme-light ol {
+  padding-left: 2em;
+  margin-bottom: 16px;
+}
+
+#md-renderer.theme-light li+li {
+  margin-top: 0.25em;
+}
+
+#md-renderer.theme-light .mermaid-wrapper {
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+#md-renderer.theme-light .mermaid-wrapper svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#md-renderer.theme-light .mermaid-fallback {
+  background: #f6f8fa;
+  border: 1px dashed #cf222e;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  line-height: 1.45;
+  color: #cf222e;
+  white-space: pre-wrap;
+  margin-bottom: 16px;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  #md-renderer {
+    padding: 20px 16px 60px;
+    font-size: 15px;
+  }
+}
+
+/* ─── Lists & Task Lists ─────────────────────────────── */
+#md-renderer input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* ─── Table of contents / anchors ────────────────────── */
+#md-renderer .anchor {
+  float: left;
+  margin-left: -20px;
+  padding-right: 4px;
+  line-height: 1;
+}
+
+#md-renderer h1:hover .anchor,
+#md-renderer h2:hover .anchor {
+  text-decoration: none;
+}
+
+/* ─── Footnotes, subscript, superscript ───────────────── */
+#md-renderer sup,
+#md-renderer sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+#md-renderer sup { top: -0.5em; }
+#md-renderer sub { bottom: -0.25em; }

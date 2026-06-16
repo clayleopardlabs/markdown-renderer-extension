@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+<!-- Load mermaid in an extension page where CSP allows 'unsafe-eval' (MV2) -->
+<script src="../lib/mermaid.min.js"></script>
+<script>
+'use strict';
+
+// This page runs as an extension page with 'unsafe-eval' in the MV2 CSP.
+
+// Initialize with safe defaults; theme is set per-request
+mermaid.initialize({
+  startOnLoad: false,
+  securityLevel: 'loose',
+  suppressErrorRendering: true,
+  theme: 'default',
+});
+
+// ── Message handler: render diagram on demand ──────────────────────
+window.addEventListener('message', async (event) => {
+  const data = event.data;
+  if (!data || data.type !== 'render') return;
+
+  const { id, source, theme } = data;
+
+  try {
+    // Re-initialize with the requested theme each time
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'loose',
+      suppressErrorRendering: true,
+      theme: theme || 'default',
+    });
+
+    const result = await mermaid.render(id, source);
+    const svg = (typeof result === 'object' && result !== null && 'svg' in result)
+      ? result.svg
+      : String(result);
+
+    // Send result back to the content script
+    event.source.postMessage({ type: 'result', id, svg }, event.origin);
+  } catch (err) {
+    event.source.postMessage({ type: 'result', id, error: err.message || String(err) }, event.origin);
+  }
+});
+
+// Signal readiness
+console.log('[Mermaid-Renderer] Renderer page ready');
+</script>
+</body>
+</html>

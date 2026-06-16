@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "Markdown Renderer",
+  "version": "1.0.0",
+  "description": "Renders .md files with dark mode (on by default) and mermaid diagram support",
+  "homepage_url": "https://github.com/user/markdown-renderer",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*.md",
+        "*://*/*.MD",
+        "*://*/*.markdown",
+        "*://*/*.MARKDOWN",
+        "file:///*.md",
+        "file:///*.MD",
+        "file:///*.markdown",
+        "file:///*.MARKDOWN"
+      ],
+      "js": [
+        "lib/marked.min.js",
+        "lib/mermaid.min.js",
+        "content/render.js"
+      ],
+      "css": [
+        "content/styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Markdown Renderer",
+    "default_icon": {
+      "16": "icons/icon-16.svg",
+      "48": "icons/icon-48.svg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.svg",
+    "48": "icons/icon-48.svg",
+    "96": "icons/icon-96.svg"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "markdown-renderer@leoparlabs.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
