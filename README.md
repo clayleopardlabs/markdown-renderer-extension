@@ -1,6 +1,6 @@
-# Markdown Renderer
+# Only Firefox Extension with the NEW mermaid engine
 
-A Firefox browser extension that renders `.md` files with dark mode (on by default) and full Mermaid diagram support.
+A Firefox browser extension that renders `.md` files with dark mode (on by default) and full Mermaid diagram support, including the ones only supported in 10+.
 
 ## Features
 
