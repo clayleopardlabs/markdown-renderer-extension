@@ -4,11 +4,11 @@ A Firefox browser extension that renders `.md` files with dark mode (on by defau
 
 ## Features
 
-- **Automatic markdown rendering** — detects `.md` and `.markdown` files and renders them in-browser with a clean dark theme
-- **Mermaid diagrams** — renders all diagram types: flowchart, sequenceDiagram, pie, gantt, classDiagram, stateDiagram, erDiagram, gitGraph, timeline, mindmap
-- **Dark mode by default** — low-eyestrain viewing for documentation-heavy workflows
-- **Lightweight** — no external dependencies beyond the bundled marked and mermaid libraries
-- **Works on file:// URLs** — renders local `.md` files directly from disk
+- **Automatic markdown rendering** detects `.md` and `.markdown` files and renders them in-browser with a clean dark theme
+- **Mermaid diagrams** renders all diagram types: flowchart, sequenceDiagram, pie, gantt, classDiagram, stateDiagram, erDiagram, gitGraph, timeline, mindmap
+- **Dark mode by default** low-eyestrain viewing for documentation-heavy workflows
+- **Lightweight** no external dependencies beyond the bundled marked and mermaid libraries
+- **Works on file:// URLs** renders local `.md` files directly from disk
 
 ## Installation
 
@@ -52,7 +52,7 @@ If the iframe mechanism fails, it falls back to `mermaid.render()` directly.
 ├── manifest.json            Extension manifest (Manifest v2, Firefox)
 ├── background.js            Background script (non-persistent)
 ├── content/
-│   ├── render.js            Content script — markdown detection and rendering
+│   ├── render.js            Content script markdown detection and rendering
 │   └── styles.css           Rendered markdown styles (dark theme)
 ├── renderer/
 │   └── mermaid-renderer.html  Extension page for CSP-safe Mermaid rendering
@@ -67,7 +67,7 @@ If the iframe mechanism fails, it falls back to `mermaid.render()` directly.
 ├── serve-test.js            HTTP server for local testing
 ├── package.json             Playwright dependency (dev only)
 ├── AGENTS.md                Development context (AI agent reference)
-├── .omo/                    Personal development files — not needed for the extension itself
+├── .omo/                    Personal development files not needed for the extension itself
 └── node_modules/            Playwright runtime (dev only)
 ```
 
